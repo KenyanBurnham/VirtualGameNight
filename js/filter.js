@@ -8,7 +8,7 @@ Source: https://codepen.io/InnovantTech/pen/qBdKVBY
 
 function filterSearch(){
   var search = $(".uk-search-input").eq(0).val().toLowerCase();
-  console.log(search);
+  //console.log(search);
   if(!search){
     $(".uk-search-input").eq(0).attr("uk-filter-control", "");
   }else{
