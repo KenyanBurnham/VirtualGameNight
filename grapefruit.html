@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Kenyan Burnham">
+
+  <!-- External Scripts-->
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.6/js/uikit.min.js"></script>
+  <!-- Internal Scripts -->
+  <script type="text/javascript" src="js/filter.js"></script>
+
+  <!-- External Stylesheets-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.6/css/uikit.min.css">
+  <!-- Internal Stylesheets -->
+  <link rel="stylesheet" href="/css/filter.css">
+
+</head>
+
+<body>
+
+
+  <div class="uk-flex uk-flex-wrap uk-child-width-1-1 uk-child-width-1-2@l">
+
+    <div class="uk-padding-large">
+      <div uk-filter="target: .filter2" class="uk-width-1-1 filter-main2">
+        <div class="uk-flex uk-flex-middle uk-flex-column uk-width-1-1 uk-margin-small-bottom filter-options-container2">
+          <div class="uk-flex uk-flex-right uk-flex-last uk-flex-1 uk-margin-medium filter-search-container2">
+            <form onsubmit="return false;" class="uk-subnav uk-subnav-pill uk-search uk-search-default uk-width-medium">
+              <span class="uk-search-icon-flip" uk-search-icon></span>
+              <input onkeyup="filterSearch();" uk-filter-control="group: name" class="uk-search-input" type="search" placeholder="Search...">
+            </form>
+          </div>
+          <div class="uk-flex uk-flex-center uk-flex-left@s uk-grid-small uk-grid-divider uk-child-width-auto uk-margin-small" uk-grid>
+
+            <!--
+            <div>
+              <ul class="uk-subnav uk-subnav-pill" uk-margin>
+                <li class="uk-active" uk-filter-control="group: tag"><a href="#">All</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <ul class="uk-flex uk-flex-center uk-flex-left@s uk-subnav uk-subnav-pill">
+                <li uk-filter-control="filter: [tag='steam']; group: tag"><a href="#">Anticancer</a></li>
+                <li uk-filter-control="filter: [tag='tabletopia']; group: tag"><a href="#">Anti-Infective</a></li>
+                <li uk-filter-control="filter: [tag='tele']; group: tag"><a href="#">Antilipemic</a></li>
+                <li uk-filter-control="filter: [tag='tabletopia']; group: tag"><a href="#">Cardiovascular</a></li>
+                <li uk-filter-control="filter: [tag='tele']; group: tag"><a href="#">CNS</a></li>
+                <li uk-filter-control="filter: [tag='tele']; group: tag"><a href="#">Antilipemic</a></li>
+                <li uk-filter-control="filter: [tag='tabletopia']; group: tag"><a href="#">Cardiovascular</a></li>
+                <li uk-filter-control="filter: [tag='tele']; group: tag"><a href="#">CNS</a></li>
+              </ul>
+            </div>
+            -->
+          </div>
+        </div>
+
+        <ul class="filter2 uk-child-width-1-1 uk-child-width-1-2@l uk-text-center uk-dark uk-animation-toggle" uk-grid tabindex="0">
+          <p class="skills-no-result2 uk-hidden uk-text-center uk-width-1-1 uk-margin-small-top uk-h4">No results</p>
+
+          <!--
+
+          <li class="skills-el2" data-name="crizotinib">
+              <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h3 class="card-title">Crizotinib</h3>
+                      <h6 class="card-subtitle mb-2 text-muted">Anticancer Agent</h6>
+                      <hr>
+                      <p class="card-text">Side Effects</p>
+                      <span class="badge badge-info">Torsade De Pointes</span>
+                      <span class="badge badge-info">Myelotoxicity</span>
+                      <span class="badge badge-info">Nephrotoxicity</span>
+                      <span class="badge badge-info">Postural Hypotension</span>
+                      <span class="badge badge-info">Syncope</span>
+                      <span class="badge badge-info">Rhabdomylosis</span>
+                      <span class="badge badge-info">GI Bleeding</span>
+                      <span class="badge badge-info">Loss of Efficacy</span>
+                      <span class="badge badge-info">Hyperkalemia</span>
+                      <span class="badge badge-info">Arrhythmias</span>
+                      <span class="badge badge-info">Peripheral Edema</span>
+                      <span class="badge badge-info">Kidney Bleeding</span>
+                      <span class="badge badge-info">Respiratory Depression</span>
+                      <span class="badge badge-info">Dizziness</span>
+                      <span class="badge badge-info">Sedation</span>
+                      <span class="badge badge-info">Hallucinations</span>
+                      <span class="badge badge-info">Somnolence</span>
+                      <span class="badge badge-info">Orthostatic Hypotension</span>
+                      <span class="badge badge-info">Urinary Retention</span>
+                      <span class="badge badge-info">Constipation</span>
+
+                      <p class="card-text">Predicted Risk</p>
+                      <span class="badge badge-danger"> &gt; 70%</span>
+                      <span class="badge badge-warning">30% &gt; 70%</span>
+
+                      <p class="card-text">Possible Alternative Medicine</p>
+                      <span class="badge badge-secondary">None Currently Known</span>
+                      <span class="badge badge-primary">Warfarin</span>
+
+                      <p class="card-text">Sources</p>
+                      <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                    </div>
+                </div>
+          </li>
+          -->
+<!--
+            <li class="skills-el2" tag="tabletopia" data-tag="tabletopia" data-name="ancient terrible things" data-platform=”tabletopia” data-maxplayer=”4” data-minplayer=”2” data-playtime=”60”>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <div class="thumbnail">
+                            <img style="width: 125px; height: 125px;" src="https://goplaylisten.files.wordpress.com/2014/12/ancient-terrible-things.png" alt="">
+                            <h3>Ancient Terrible Things</h3>
+                            <p>60 min | 2 - 4 players</p>
+                            <p>On <a src=”https://tabletopia.com/”>Tabletopia</a></p><br>
+                            <button class="btn btn-primary action primary tocart" onclick=" window.open('https://tabletopia.com/games/ancient-terrible-things-2014','_blank'); return false;">Play</button>
+                        </div>
+                    </div>
+            </li>
+-->
+
+            <li class="skills-el2" data-name="crizotinib">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Crizotinib</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anticancer Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+                        <span class="badge badge-info">Myelotoxicity</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-secondary">None Currently Known</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="dasatinib">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Dasatinib</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anticancer Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+                        <span class="badge badge-info">Myelotoxicity</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Imatinib</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="erlotinib">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Erlotinib</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anticancer Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Myelotoxicity</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-secondary">None Currently Known</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="everolimus">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Everolimus</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anticancer Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Myelotoxicity</span>
+                        <span class="badge badge-info">Nephrotoxicity</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-secondary">None Currently Known</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="lapatinib">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Lapatinib</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anticancer Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+                        <span class="badge badge-info">Myelotoxicity</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-secondary">None Currently Known</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="Nilotinib">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Nilotinib</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anticancer Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+                        <span class="badge badge-info">Myelotoxicity</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Imatinib</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="pazopanib">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Pazopanib</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anticancer Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+                        <span class="badge badge-info">Myelotoxicity</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Sorafenib</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="sunitinib">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Sunitinib</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anticancer Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+                        <span class="badge badge-info">Myelotoxicity</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Sorafenib</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="vandetanib">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Vandetanib</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anticancer Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+                        <span class="badge badge-info">Myelotoxicity</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-secondary">None Currently Known</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="venurafenib">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Venurafenib</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anticancer Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+                        <span class="badge badge-info">Myelotoxicity</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-secondary">None Currently Known</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="erthromycin">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Erthromycin</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anti-Infective Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Chlarithromycin</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="halofantrine">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Halofantrine</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anti-Infective Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Doxycycline</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="mariviroc">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Maraviroc</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anti-Infective Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Postural Hypotension</span>
+                        <span class="badge badge-info">Syncope</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-secondary">None Currently Known</span>
+                        <span class="badge badge-primary">Enfuvirtide</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="primaquine">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Primaquine</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anti-Infective Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Myelotoxicity</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Doxycycline</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="quinine">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Quinine</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anti-Infective Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Doxycycline</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="rilpivirine">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Rilpivirine</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anti-Infective Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Nevirapine</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="atorvastatin">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Atorvastatin</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Antilipemic Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Rhabdomylosis</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Pravastatin</span>
+                        <span class="badge badge-primary">Rosuvastatin</span>
+                        <span class="badge badge-primary">Fluvastatin</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="lovastatin">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Lovastatin</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anti-Infective Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Rhabdomylosis</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Pravastatin</span>
+                        <span class="badge badge-primary">Rosuvastatin</span>
+                        <span class="badge badge-primary">Fluvastatin</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="simvastatin">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">simvastatin</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Anti-Infective Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Rhabdomylosis</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Pravastatin</span>
+                        <span class="badge badge-primary">Rosuvastatin</span>
+                        <span class="badge badge-primary">Fluvastatin</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="amiodarone">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Amiodarone</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Cardiovascular Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Sotalol</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="apixaban">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Apixaban</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Cardiovascular Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">GI Bleeding</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Warfarin</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="clopidrogel">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Clopidrogel</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Cardiovascular Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Loss of Efficacy</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Acetylsalicylic Acid</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="dronedarone">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Dronedarone</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Cardiovascular Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Sotalol</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="eplerenone">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Eplerenone</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Cardiovascular Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Hyperkalemia</span>
+                        <span class="badge badge-info">Arrhythmias</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Spironolactone</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="felodipine">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Felodipine</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Cardiovascular Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Hypotension</span>
+                        <span class="badge badge-info">Peripheral Edema</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-warning">30% &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Amlodipine</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="nifedipine">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Nifedipine</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Cardiovascular Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Hypotension</span>
+                        <span class="badge badge-info">Peripheral Edema</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-warning">30% &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Amlodipine</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="quinidine">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">Quinidine</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Cardiovascular Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">Torsade De Pointes</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-warning">30% &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-secondary">None Currently Known</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="rivaroxaban">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">rivaroxaban</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Cardiovascular Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">GI Bleeding</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-warning">30% &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Warfarin</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+            <li class="skills-el2" data-name="ticagrelor">
+                <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h3 class="card-title">ticagrelor</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Cardiovascular Agent</h6>
+                        <hr>
+                        <p class="card-text">Side Effects</p>
+                        <span class="badge badge-info">GI Bleeding</span>
+                        <span class="badge badge-info">Kidney Bleeding</span>
+
+                        <p class="card-text">Predicted Risk</p>
+                        <span class="badge badge-danger"> &gt; 70%</span>
+
+                        <p class="card-text">Possible Alternative Medicine</p>
+                        <span class="badge badge-primary">Acetylsalicylic Acid</span>
+
+                        <p class="card-text">Sources</p>
+                        <a href="https://www.cmaj.ca/content/185/4/309" class="card-link">Bailey et al., 2013</a>
+                      </div>
+                  </div>
+            </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
